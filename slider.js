@@ -35,25 +35,27 @@ function Slider (data) {
 		this.list.style.transform = 'translateX(-' + this.translate + 'px)'
 	}.bind(this)
 
-	this.touchmove = function () {
+	this.pause = function () {
+		clearInterval(this.interval)
+	}.bind(this)
 
+	this.continue = function () {
+		this.interval = setInterval(this.slide, this.timeout)
 	}.bind(this)
 
 	this.event = function () {
 		var self = this
 		
 		this.box.addEventListener('mouseover', function (e) {
-			e.preventDefault()
-			clearInterval(self.interval)
+			self.pause()
 		}, false)
 
 		this.box.addEventListener('mouseleave', function (e) {
-			e.preventDefault()
-			self.interval = setInterval(self.slide, self.timeout)
+			self.continue()
 		}, false)
 
 	}.bind(this)
 
+	
 	this.init()
-
 }
