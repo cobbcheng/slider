@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Slide</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script src="slider.js"></script>
+<script>
+	window.onload = function () {
+		var s = new Slider({
+			selector: '.main',
+			width: 500,
+			height: 250,
+			timeout: 2000,
+			speed: 500
+		})
+	}
+</script>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	.main{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		
+	}
+	.slide-box{
+		background: #333;
+		overflow: hidden;
+	}
+	.slide{
+		list-style-type: none;
+		height: 100%;
+		overflow: hidden;
+	}
+	.slide li{
+		font-size: 40px;
+		height: 100%;
+		line-height: 4;
+		color: #fff;
+		font-weight: 800;
+		text-align: center;
+		float: left;
+	}
+</style>
+</head>
+<body>
+<div class="main">
+	<div class="slide-box">
+  	<ul class="slide">
+  		<li style="background-color: #111;">1</li>
+  		<li style="background-color: #222;">2</li>
+  		<li style="background-color: #333;">3</li>
+  		<li style="background-color: #444;">4</li>
+  		<li style="background-color: #555;">5</li>
+  		<li style="background-color: #666;">6</li>
+  		<li style="background-color: #777;">7</li>
+  		<li style="background-color: #888;">8</li>
+  	</ul>
+  </div>
+</div>
+    
+</body>
+</html>
